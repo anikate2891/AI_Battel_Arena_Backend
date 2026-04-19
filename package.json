@@ -1,0 +1,41 @@
+{
+  "name": "ai_battel_arena",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@langchain/cohere": "^1.0.4",
+    "@langchain/core": "^1.1.38",
+    "@langchain/google": "^0.1.9",
+    "@langchain/groq": "^1.2.0",
+    "@langchain/langgraph": "^1.2.6",
+    "@langchain/mistralai": "^1.0.7",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.0",
+    "express": "^5.2.1",
+    "groq-sdk": "^1.1.2",
+    "jsonwebtoken": "^9.0.3",
+    "langchain": "^1.2.39",
+    "mongoose": "^9.4.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
