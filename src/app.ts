@@ -17,8 +17,11 @@ const allowedOrigins = (process.env.CORS_ORIGIN ?? 'http://localhost:5173, http:
     .filter(Boolean);
 
 app.use(cors({
-    origin: allowedOrigins,
-    credentials: true,
+  origin: [
+    "http://localhost:5173",
+    "https://ai-battel-arena.vercel.app" // 👈 apna actual domain
+  ],
+  credentials: true
 }));
 
 app.use(express.json());
