@@ -49,7 +49,7 @@ export const getChats = async (req: Request, res: Response) => {
 export const deleteChat = async (req: Request, res: Response) => {
     try {
         const userId = (req as any).user.userId;
-        const { chatId } = req.params;
+        const chatId = req.params.chatId as string;
 
         if (!mongoose.Types.ObjectId.isValid(chatId)) {
             return res.status(400).json({ message: "Invalid chat id" });
