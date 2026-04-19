@@ -25,6 +25,10 @@ app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/chats", chatRoute);
 
+app.get("/", (req, res) => {
+    res.send("Server is running");
+});
+
 app.post('/api/chat', protect,   async (req, res) => {
     const problem = typeof req.body?.problem === 'string' ? req.body.problem.trim() : '';
     if (!problem) {
