@@ -14,12 +14,20 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "https://ai-battel-arena.vercel.app",
-    "https://ai-battel-arena-frontend-d2xq.vercel.app" // 👈 apna actual domain
+    "https://ai-battel-arena-frontend-d2xq.vercel.app"
   ],
   credentials: true
 }));
 
-// app.options("/*", cors()); 
+// ← yeh add karo
+app.options("/{*path}", cors({
+  origin: [
+    "http://localhost:5173",
+    "https://ai-battel-arena.vercel.app",
+    "https://ai-battel-arena-frontend-d2xq.vercel.app"
+  ],
+  credentials: true
+}));
 
 app.use(express.json());
 app.use("/api/auth", authRoute);
