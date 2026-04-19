@@ -10,19 +10,16 @@ config();
 const app = express();
 app.use(cookieParser());
 
-
-const allowedOrigins = (process.env.CORS_ORIGIN ?? 'http://localhost:5173, http://localhost:5174')
-    .split(',')
-    .map((origin) => origin.trim())
-    .filter(Boolean);
-
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://ai-battel-arena.vercel.app" // 👈 apna actual domain
+    "https://ai-battel-arena.vercel.app",
+    "https://ai-battel-arena-frontend-d2xq.vercel.app" // 👈 apna actual domain
   ],
   credentials: true
 }));
+
+app.options("*", cors()); 
 
 app.use(express.json());
 app.use("/api/auth", authRoute);
