@@ -14,21 +14,31 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "https://ai-battel-arena.vercel.app",
-    "https://ai-battel-arena-frontend-d2xq.vercel.app"
+    "https://ai-battel-arena-frontend-d2xq.vercel.app",
+    "https://ai-battel-arena-frontend.vercel.app"  // ← yeh add karo
   ],
   credentials: true
 }));
 
-// ← yeh add karo
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://ai-battel-arena.vercel.app",
+    "https://ai-battel-arena-frontend-d2xq.vercel.app",
+    "https://ai-battel-arena-frontend.vercel.app"  // ← yeh add karo
+  ],
+  credentials: true
+}));
+
 app.options("/{*path}", cors({
   origin: [
     "http://localhost:5173",
     "https://ai-battel-arena.vercel.app",
-    "https://ai-battel-arena-frontend-d2xq.vercel.app"
+    "https://ai-battel-arena-frontend-d2xq.vercel.app",
+    "https://ai-battel-arena-frontend.vercel.app"  // ← yahan bhi
   ],
   credentials: true
 }));
-
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/chats", chatRoute);
